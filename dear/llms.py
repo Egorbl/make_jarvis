@@ -4,7 +4,7 @@ from helpers import time_it
 def get_answer_from_llm(client, text, st_memory=None, lt_memory=None):
 
     messages = [
-            {"role": "system", "content": "Твое имя Милый, ты рад помочь мне и просто поболтать ни о чем, твои реплики короткие, но с юмором."},
+            {"role": "system", "content": "Твое имя Робот, ты рад помочь мне и просто поболтать ни о чем, твои реплики короткие, но с юмором."},
         ]
     if lt_memory:
         for m in lt_memory:

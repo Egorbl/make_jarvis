@@ -13,7 +13,7 @@ def answer_action(llm_client,
                  current_transcript=None,
                  ):
     if not current_transcript:
-        print(f'[{datetime.now()}] detected Милый')
+        print(f'[{datetime.now()}] detected Робот')
         transcription = transcribe_audio_file(llm_client, current_audio_file)
     else:
         transcription = current_transcript

@@ -14,9 +14,11 @@ from tts import interrupt_tts
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--audio_device_index', help='Index of input audio device.', type=int, default=0)
+    parser.add_argument('--audio_device_index', help='Index of input audio device.', type=int, default=5)
     parser.add_argument('--audio_buffer_file', help='Absolute path to recorded audio.', default="./data/current.wav")
     args = parser.parse_args()
+
+    # print(PvRecorder.get_available_devices())
 
     audio_buffer_file_name = args.audio_buffer_file
     audio_device_index = args.audio_device_index
@@ -31,12 +33,12 @@ if __name__ == '__main__':
     load_dotenv()
     api_key = os.getenv('API_KEY')
     openai_key = os.getenv('OPENAI_KEY')
-    wake_keyword_path = "./wake_word/Милый_ru_mac_v3_0_0.ppn"
-    stop_keyword_path = "./wake_word/Хватит_ru_mac_v3_0_0.ppn"
-    interrupt_path = "./wake_word/Достаточно_ru_mac_v3_0_0.ppn"
+    wake_keyword_path = "./wake_word/робот_ru_linux_v3_0_0.ppn"
+    stop_keyword_path = "./wake_word/хватит_ru_linux_v3_0_0.ppn"
+    interrupt_path = "./wake_word/достаточно_ru_linux_v3_0_0.ppn"
     model_path = "./wake_word/porcupine_params_ru.pv"
 
-    llm_client = OpenAI(api_key=openai_key)
+    llm_client = OpenAI(base_url="https://api.proxyapi.ru/openai/v1/", api_key=openai_key)
 
     porcupine = pvporcupine.create(
             access_key=api_key,
