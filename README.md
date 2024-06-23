@@ -10,12 +10,15 @@ Basic Solution (60 points):
 * **Voice Generation Integration** - Enable your system to respond audibly using synthesized speech (20 points).
 
 
-**Демо:
+**Демо**:
 https://drive.google.com/file/d/1m2DAN1585coX-95COzeQ7j07W1dC3Lc8/view?usp=sharing
 
 **Использовал**:
 
 Wake word: picovoice
+
 TTS: tts-1
+
 STT: whisper
+
 LLM: gpt4o
